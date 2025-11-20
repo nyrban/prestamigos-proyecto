@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/prestamigos.iml" filepath="$PROJECT_DIR$/.idea/prestamigos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/prestamigos-proyecto.iml" filepath="$PROJECT_DIR$/.idea/prestamigos-proyecto.iml" />
     </modules>
   </component>
 </project>
