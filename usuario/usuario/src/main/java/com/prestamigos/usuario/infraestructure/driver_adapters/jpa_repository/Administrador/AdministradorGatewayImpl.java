@@ -1,4 +1,4 @@
-package com.prestamigos.usuario.infraestructure.driver_adapters.jpa_repository;
+package com.prestamigos.usuario.infraestructure.driver_adapters.jpa_repository.Administrador;
 
 
 import com.prestamigos.usuario.domain.model.Administrador;

@@ -1,4 +1,4 @@
-package com.prestamigos.usuario.infraestructure.driver_adapters.jpa_repository;
+package com.prestamigos.usuario.infraestructure.driver_adapters.jpa_repository.Cliente;
 
 import com.prestamigos.usuario.domain.model.Cliente;
 import com.prestamigos.usuario.domain.model.gateway.ClienteGateway;

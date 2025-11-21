@@ -1,4 +1,4 @@
-package com.prestamigos.usuario.infraestructure.driver_adapters.jpa_repository;
+package com.prestamigos.usuario.infraestructure.driver_adapters.jpa_repository.Cliente;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

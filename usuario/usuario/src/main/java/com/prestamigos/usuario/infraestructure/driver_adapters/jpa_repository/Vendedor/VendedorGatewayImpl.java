@@ -1,4 +1,4 @@
-package com.prestamigos.usuario.infraestructure.driver_adapters.jpa_repository;
+package com.prestamigos.usuario.infraestructure.driver_adapters.jpa_repository.Vendedor;
 
 import com.prestamigos.usuario.domain.model.Vendedor;
 import com.prestamigos.usuario.domain.model.gateway.VendedorGateway;

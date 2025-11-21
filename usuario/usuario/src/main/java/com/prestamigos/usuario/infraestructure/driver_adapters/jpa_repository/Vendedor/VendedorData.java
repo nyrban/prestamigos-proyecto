@@ -1,4 +1,4 @@
-package com.prestamigos.usuario.infraestructure.driver_adapters.jpa_repository;
+package com.prestamigos.usuario.infraestructure.driver_adapters.jpa_repository.Vendedor;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,10 +9,10 @@ import java.time.LocalDate;
 
 @Data
 @Entity
-@Table(name = "clientes")
+@Table(name = "vendedores")
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClienteData {
+public class VendedorData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +27,7 @@ public class ClienteData {
     @Column(length = 100, nullable = false)
     private String password;
 
-    private LocalDate fechaNacimiento; // yyyy-MM-dd
+    private LocalDate fechaNacimiento;
     private String direccion;
     private String ciudad;
     private String departamento;
@@ -36,5 +36,10 @@ public class ClienteData {
     private boolean activo;
     private String tokenConfirmacion;
 
-    private Long vendedorId; // FK microservicio vendedor
+    // Campos específicos del vendedor
+    private double cupoTotal;
+    private double cupoDisponible;
+    private double porcentajeComision;
+    private double gananciasAcumuladas;
 }
+

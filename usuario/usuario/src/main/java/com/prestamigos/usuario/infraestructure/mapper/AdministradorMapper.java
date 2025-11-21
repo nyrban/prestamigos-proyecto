@@ -1,7 +1,7 @@
 package com.prestamigos.usuario.infraestructure.mapper;
 
 import com.prestamigos.usuario.domain.model.Administrador;
-import com.prestamigos.usuario.infraestructure.driver_adapters.jpa_repository.AdministradorData;
+import com.prestamigos.usuario.infraestructure.driver_adapters.jpa_repository.Administrador.AdministradorData;
 import org.springframework.stereotype.Component;
 
 @Component
