@@ -1,6 +1,6 @@
 package com.prestamigos.pago.infraestructure.driver_adapters.external_repository;
 
-    import com.prestamigos.pago.domain.model.gateway.PrestamoGateway;
+import com.prestamigos.pago.domain.model.gateway.PrestamoGateway;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
@@ -59,3 +59,4 @@ public class PrestamoGatewayImpl implements PrestamoGateway {
             return false;
         }
     }
+}
