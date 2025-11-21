@@ -2,15 +2,15 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile name="Annotation profile for usuario" enabled="true">
+      <profile name="Annotation profile for pago" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
         </processorPath>
-        <module name="prestamo" />
         <module name="pago" />
+        <module name="prestamo" />
         <module name="usuario" />
       </profile>
     </annotationProcessing>
