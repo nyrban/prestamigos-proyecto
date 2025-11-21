@@ -1,4 +1,4 @@
-package com.prestamigos.prestamo.domain.gateway;
+package com.prestamigos.prestamo.domain.model.gateway;
 
 import com.prestamigos.prestamo.domain.model.Prestamo;
 

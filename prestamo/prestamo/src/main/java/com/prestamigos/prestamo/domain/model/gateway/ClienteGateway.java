@@ -1,4 +1,4 @@
-package com.prestamigos.prestamo.domain.gateway;
+package com.prestamigos.prestamo.domain.model.gateway;
 
 public interface ClienteGateway {
 
