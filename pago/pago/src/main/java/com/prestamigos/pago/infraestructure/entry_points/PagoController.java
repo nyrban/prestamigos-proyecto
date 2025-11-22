@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/prestaamigos/pagos")
+@RequestMapping("/api/prestamigos/pagos")
 @RequiredArgsConstructor
 public class PagoController {
 

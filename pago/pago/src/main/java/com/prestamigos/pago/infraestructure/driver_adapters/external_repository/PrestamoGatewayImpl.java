@@ -13,7 +13,7 @@ import java.util.Map;
 public class PrestamoGatewayImpl implements PrestamoGateway {
 
     private final RestTemplate restTemplate;
-    private static final String URL = "http://localhost:8084/api/prestaamigos/prestamos/{id}";
+    private static final String URL = "http://localhost:7001/api/prestamigos/prestamos/{id}";
 
     @Override
     public boolean existePrestamo(Long id) {

@@ -11,7 +11,7 @@ public class ClienteGatewayImpl implements ClienteGateway {
 
     private final RestTemplate restTemplate;
 
-    private final String URL_CLIENTE = "http://localhost:8083/api/prestaamigos/cliente";
+    private final String URL_CLIENTE = "http://localhost:7000/api/prestamigos/cliente";
 
     @Override
     public boolean existeCliente(Long clienteId) {

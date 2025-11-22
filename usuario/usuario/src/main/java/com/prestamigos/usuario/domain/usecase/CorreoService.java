@@ -8,7 +8,7 @@ public class CorreoService {
 
     public void enviarCorreoConfirmacion(Usuario usuario) {
         String tipoUsuario = usuario.getClass().getSimpleName().toLowerCase();
-        String linkConfirmacion = "http://localhost:8083/api/prestaamigos/" + tipoUsuario + "/confirm?token="
+        String linkConfirmacion = "http://localhost:7000/api/prestamigos/" + tipoUsuario + "/confirm?token="
                 + usuario.getTokenConfirmacion();
 
         System.out.println("🔗 Enlace de confirmación (" + tipoUsuario + "): " + linkConfirmacion);

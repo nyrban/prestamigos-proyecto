@@ -3,23 +3,27 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for pago" enabled="true">
+      <profile name="Annotation profile for UsuaFinal" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
         </processorPath>
-        <module name="pago" />
         <module name="prestamo" />
         <module name="usuario" />
+        <module name="pago" />
+        <module name="UsuaFinal" />
+        <module name="solicitud" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="UsuaFinal" options="-parameters" />
       <module name="pago" options="-parameters" />
       <module name="prestamo" options="-parameters" />
+      <module name="solicitud" options="-parameters" />
       <module name="usuario" options="-parameters" />
     </option>
   </component>

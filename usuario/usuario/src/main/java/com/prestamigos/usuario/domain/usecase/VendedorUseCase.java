@@ -123,6 +123,17 @@ public class VendedorUseCase {
         return vendedor;
     }
 
+    public Vendedor buscarPorToken(String token) {
+        if (token == null || token.isEmpty()) {
+            throw new IllegalArgumentException("Token inválido.");
+        }
+        Vendedor vendedor = vendedorGateway.buscarPorToken(token);
+        if (vendedor == null) {
+            throw new IllegalArgumentException("Token inválido o vendedor no encontrado.");
+        }
+        return vendedor;
+    }
+
 
     public Vendedor actualizarVendedor(Vendedor vendedor) {
 
@@ -186,16 +197,16 @@ public class VendedorUseCase {
         }
 
 
-        if (vendedor.getPassword() == null || vendedor.getPassword().isBlank()) {
+        if (vendedor.getPassword() != null && !vendedor.getPassword().isBlank()) {
+            if (!vendedor.getPassword().startsWith("$2a$")) {
+                vendedor.setPassword(encrypterGateway.encrypt(vendedor.getPassword()));
+            }
+        } else {
             vendedor.setPassword(existente.getPassword());
-        } else if (!vendedor.getPassword().startsWith("$2a$")) {
-            vendedor.setPassword(encrypterGateway.encrypt(vendedor.getPassword()));
         }
 
-        vendedor.setActivo(existente.getActivo());
-
-        if (vendedor.getTokenConfirmacion() == null) {
-            vendedor.setTokenConfirmacion(existente.getTokenConfirmacion());
+        if (vendedor.getActivo() == null) {
+            vendedor.setActivo(existente.getActivo());
         }
 
         return vendedorGateway.actualizarVendedor(vendedor);
@@ -223,15 +234,5 @@ public class VendedorUseCase {
         return vendedor;
     }
 
-    public Vendedor buscarPorToken(String token) {
-        if (token == null || token.isEmpty()) {
-            throw new IllegalArgumentException("Token inválido.");
-        }
-        Vendedor vendedor = vendedorGateway.buscarPorToken(token);
-        if (vendedor == null) {
-            throw new IllegalArgumentException("Token inválido o vendedor no encontrado.");
-        }
-        return vendedor;
-    }
 }
 

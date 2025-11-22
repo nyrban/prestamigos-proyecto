@@ -15,7 +15,7 @@ public class VendedorGatewayImpl implements VendedorGateway {
     @Override
     public boolean existeVendedor(Long vendedorId) {
         try {
-            String url = "http://localhost:8083/api/vendedores/" + vendedorId;
+            String url = "http://localhost:7000/api/vendedores/" + vendedorId;
             restTemplate.getForObject(url, Object.class);
             return true;
         } catch (HttpClientErrorException.NotFound e) {

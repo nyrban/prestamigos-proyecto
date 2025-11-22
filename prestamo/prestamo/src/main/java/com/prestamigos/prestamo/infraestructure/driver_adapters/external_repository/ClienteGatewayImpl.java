@@ -15,7 +15,7 @@ public class ClienteGatewayImpl implements ClienteGateway {
     @Override
     public boolean existeCliente(Long clienteId) {
         try {
-            String url = "http://localhost:8083/api/prestaamigos/cliente/" + clienteId;
+            String url = "http://localhost:7000/api/prestamigos/cliente/" + clienteId;
             restTemplate.getForObject(url, Object.class);
             return true;
         } catch (HttpClientErrorException e) {

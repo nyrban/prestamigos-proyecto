@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 public class AdministradorGatewayImpl implements AdministradorGateway {
 
     private final RestTemplate restTemplate;
-    private static final String URL = "http://localhost:8083/api/prestaamigos/administrador/{id}";
+    private static final String URL = "http://localhost:7000/api/prestamigos/administrador/{id}";
 
     @Override
     public boolean existeAdministrador(Long id) {
