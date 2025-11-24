@@ -21,9 +21,7 @@ public class PagoGatewayImpl implements PagoGateway {
     private final PagoDataJpaRepository repository;
     private final RestTemplate restTemplate;
 
-    // ============================================================
-    // GUARDAR PAGO
-    // ============================================================
+
     @Override
     public Pago guardarPago(Pago pago) {
 
@@ -40,7 +38,6 @@ public class PagoGatewayImpl implements PagoGateway {
                 throw new RuntimeException("Respuesta vacía del microservicio préstamos.");
             }
 
-            // INTENTAR LEER clienteId DIRECTO
             Object clienteIdPrestamo = prestamoResponse.get("clienteId");
 
             // SI clienteId viene nulo, INTENTAR otras claves conocidas
@@ -58,7 +55,6 @@ public class PagoGatewayImpl implements PagoGateway {
 
             Long clienteIdReal = Long.valueOf(clienteIdPrestamo.toString());
 
-            // Asignar clienteId REAL AL PAGO (por si el body trae algo diferente)
             pago.setClienteId(clienteIdReal);
 
         } catch (HttpClientErrorException.NotFound e) {
@@ -71,25 +67,19 @@ public class PagoGatewayImpl implements PagoGateway {
             );
         }
 
-        // Guardar pago en la base de datos local
         PagoData data = pagoMapper.toData(pago);
         PagoData guardado = repository.save(data);
 
         return pagoMapper.toPago(guardado);
     }
 
-    // ============================================================
-    // BUSCAR POR ID
-    // ============================================================
     @Override
     public Optional<Pago> buscarPorId(Long id) {
         return repository.findById(id)
                 .map(pagoMapper::toPago);
     }
 
-    // ============================================================
-    // LISTAR TODOS
-    // ============================================================
+
     @Override
     public List<Pago> listarTodos() {
         return repository.findAll()
@@ -98,9 +88,7 @@ public class PagoGatewayImpl implements PagoGateway {
                 .toList();
     }
 
-    // ============================================================
-    // LISTAR POR CLIENTE ID
-    // ============================================================
+
     @Override
     public List<Pago> listarPorClienteId(Long clienteId) {
         return repository.findByClienteId(clienteId)
@@ -109,9 +97,7 @@ public class PagoGatewayImpl implements PagoGateway {
                 .toList();
     }
 
-    // ============================================================
-    // LISTAR POR PRESTAMO ID
-    // ============================================================
+
     @Override
     public List<Pago> listarPorPrestamoId(Long prestamoId) {
         return repository.findByPrestamoId(prestamoId)
@@ -120,9 +106,7 @@ public class PagoGatewayImpl implements PagoGateway {
                 .toList();
     }
 
-    // ============================================================
-    // LISTAR POR FECHA
-    // ============================================================
+
     @Override
     public List<Pago> listarPorFecha(LocalDate fecha) {
         return repository.findByFecha(fecha)
@@ -131,9 +115,7 @@ public class PagoGatewayImpl implements PagoGateway {
                 .toList();
     }
 
-    // ============================================================
-    // ACTUALIZAR
-    // ============================================================
+
     @Override
     public Pago actualizarPago(Pago pago) {
 
@@ -147,9 +129,7 @@ public class PagoGatewayImpl implements PagoGateway {
         return pagoMapper.toPago(actualizado);
     }
 
-    // ============================================================
-    // ELIMINAR
-    // ============================================================
+
     @Override
     public void eliminarPago(Long id) {
 

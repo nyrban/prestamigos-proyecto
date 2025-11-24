@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class UseCaseConfig {
 
+
     @Bean
     public RestTemplate restTemplate() {
         return new RestTemplate();
@@ -25,4 +26,3 @@ public class UseCaseConfig {
         return new PagoUseCase(pagoGateway, clienteGateway, prestamoGateway);
     }
 }
-//.

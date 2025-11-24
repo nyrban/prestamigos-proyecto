@@ -18,17 +18,14 @@ public class PrestamoGatewayImpl implements PrestamoGateway {
     @Override
     public boolean existePrestamo(Long id) {
         try {
-            // Si el préstamo existe, getForObject NO lanza excepción
             Object prestamo = restTemplate.getForObject(URL, Object.class, id);
 
             return prestamo != null; // existe
         }
         catch (HttpClientErrorException.NotFound e) {
-            // 404 -> préstamo no existe
             return false;
         }
         catch (Exception e) {
-            // Cualquier otra cosa -> NO existe (evita el 500)
             return false;
         }
     }
@@ -52,10 +49,8 @@ public class PrestamoGatewayImpl implements PrestamoGateway {
             return clienteReal.equals(clienteId);
 
         } catch (HttpClientErrorException.NotFound e) {
-            // Préstamo NO existe
             return false;
         } catch (Exception e) {
-            // Cualquier otra falla → considerar que NO pertenece
             return false;
         }
     }
